@@ -5,77 +5,369 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ján Vojvoda - Cybersecurity</title>
 <style>
-    .hero,header{transition:opacity .6s,transform .6s;transform:translateY(20px)}.logo,.plus-symbol,body,nav a{color:#fff}.hero,.section,header{transform:translateY(20px)}.btn,.contact-btn,nav a{text-decoration:none}body,footer{background-color:#000}@font-face{font-family:GaisMono;src:url('fonts/GaisMono-Regular.woff2') format('woff2'),url('fonts/GaisMono-Regular.woff') format('woff');font-weight:400;font-style:normal}*{margin:0;padding:0;box-sizing:border-box}body{font-family:GaisMono,monospace;line-height:1.6;min-height:100vh;overflow-x:hidden;position:relative}html{scroll-behavior:smooth}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle,#fff .5px,transparent .5px);background-size:15px 15px;opacity:.15;z-index:0}.plus-symbol{position:fixed;font-size:28px;opacity:.25;z-index:1}.hero,.modal,.section,header{opacity:0}.plus-top-right{top:20px;right:20px}.plus-bottom-left{bottom:20px;left:20px}.container{max-width:1000px;margin:0 auto;padding:60px 20px;position:relative;z-index:2}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:80px;padding-bottom:20px;border-bottom:1px solid #333}.hero.visible,.section.visible,header.visible{opacity:1;transform:translateY(0)}.logo{font-weight:700;font-size:1.2em}.domain,nav a{font-size:.9em}.domain{color:#666}nav a{margin-left:30px;transition:color .2s}nav a:hover{color:#ccc}.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:100px}.profile-image{width:100%;height:300px;background-color:#111;border:1px solid #333;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2em;color:#666}.hero-content h1{font-size:2.5em;margin-bottom:10px;font-weight:400;color:#fff}.subtitle{color:#666;font-size:1.3em;margin-bottom:20px}.hero-content p{color:#999;margin-bottom:30px;font-size:1.1em}.btn{display:inline-block;padding:12px 24px;background:#fff;color:#000;border-radius:4px;font-size:.9em;transition:.2s;border:1px solid #fff;margin-right:10px}.btn-outline,.card{border:1px solid #333}.btn:hover{background:#000;color:#fff}.btn-outline{background:0 0;color:#fff}.btn-outline:hover{background:#333;color:#fff}.section{margin-bottom:80px;transition:opacity .6s,transform .6s}.card,.contact-btn{transition:.2s;background:#111}.section-title{font-size:1.5em;margin-bottom:30px;font-weight:400;color:#fff}.card p,.contact-btn,footer{font-size:.9em}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px}.card{border-radius:8px;padding:25px}.card:hover{border-color:#666;transform:translateY(-2px)}.card h3{margin-bottom:15px;font-weight:400;color:#fff}.card p{color:#999}.contact-buttons{display:flex;gap:15px;flex-wrap:wrap}.contact-btn{padding:10px 20px;border:1px solid #333;border-radius:4px;color:#fff}.contact-btn:hover{background:#333;border-color:#666}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;pointer-events:none;transition:opacity .3s;z-index:1000}.modal.active{opacity:1;pointer-events:auto}.modal-content{background:#111;padding:40px;border-radius:8px;max-width:500px;width:90%;position:relative;border:1px solid #333}.close-btn{position:absolute;top:20px;right:20px;font-size:1.2em;cursor:pointer;color:#666}.close-btn:hover{color:#fff}.modal-title{margin-bottom:20px;font-size:1.3em;color:#fff}.modal-text{color:#999;line-height:1.6;white-space:pre-line}footer{text-align:center;padding:40px 0;border-top:1px solid #333;color:#666}.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.skill-tag{background:#333;padding:4px 12px;border-radius:20px;font-size:.8em;color:#ccc}@media (max-width:768px){.hero{grid-template-columns:1fr;gap:40px}header{flex-direction:column;align-items:flex-start}nav{margin-top:20px}nav a{margin-left:0;margin-right:20px}}
-.profile-image {
-    position: relative;
-    overflow: hidden;
-}
+    body { 
+        background-color: #000; 
+        color: #fff; 
+        font-family: 'GaisMono', monospace; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.6; 
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: radial-gradient(circle, #6b6b6b 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.2;
+        z-index: 0;
+    }
 
-.profile-image::before {
-    content: 'ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERRERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERRERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERROR://ERR404 NOTFOUND/ERROR - ERR ERR404 NOTFOUND/ERROR - ERR ERR ERR';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 112%;
-    height: 100%;
- 
-    color: rgba(41, 41, 41, 0.3);
-    font-size: 12px;
-    line-height: 12px;
-    word-wrap: break-word;
-    z-index: 1;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    /* Improved animations */
+    header, .hero, .section { 
+        opacity: 0; 
+        transform: translateY(20px); 
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+    }
+    header.visible, .hero.visible, .section.visible { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+
+    .container { 
+        max-width: 1000px; 
+        margin: 0 auto; 
+        padding: 60px 20px; 
+        position: relative; 
+        z-index: 2; 
+        flex: 1;
+    }
+    .plus-symbol { 
+        position: fixed; 
+        font-size: 28px; 
+        opacity: .25; 
+        z-index: 1; 
+    }
+    .plus-top-right { top: 20px; right: 20px; }
+    .plus-bottom-left { bottom: 20px; left: 20px; }
+
+    header { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin-bottom: 80px; 
+        padding-bottom: 20px; 
+        border-bottom: 1px solid #333; 
+    }
+    .logo { font-weight: 700; font-size: 1.2em; color: #fff; }
+    .domain { color: #666; font-size: .9em; }
+    nav a { 
+        color: #fff; 
+        margin-left: 30px; 
+        text-decoration: none; 
+        transition: color .2s; 
+        font-size: .9em; 
+    }
+    nav a:hover { color: #ccc; }
+
+    .hero { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 60px; 
+        margin-bottom: 100px; 
+    }
+    .profile-image { 
+        width: 100%; 
+        height: 300px; 
+        background-color: #111; 
+        border: 1px solid #333; 
+        border-radius: 8px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-size: 1.2em; 
+        color: #666; 
+        position: relative; 
+        overflow: hidden; 
+    }
+    .profile-image::before { 
+        content:'ERR ERROR://ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR - ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR - ERR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - NOTFOUND/ERROR ERR ERR ERR NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR - - - - ERR404 ERR ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR - ERR404 ERR ERROR://ERR404 ERR ERROR://ERR404 - ERR ERR ERR404 ERR ERR404 - - ERR ERROR://ERR404 ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR404 ERR404 ERR ERR ERR - - ERR ERR ERR - ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR ERR ERR - ERR - NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR ERR404 - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR - ERR ERR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERR ERR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR404 NOTFOUND/ERROR - - NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR ERR404 - NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 - ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 - NOTFOUND/ERROR ERR ERR - ERR ERR ERR - NOTFOUND/ERROR ERR ERR ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - ERR ERR - - ERROR://ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 - NOTFOUND/ERROR - - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERR ERR NOTFOUND/ERROR ERR ERR404 - - NOTFOUND/ERROR - - - - ERR404 ERROR://ERR404 ERROR://ERR404 ERR ERR ERR ERR ERR404 ERR - ERROR://ERR404 - ERR ERR NOTFOUND/ERROR ERR ERR404 - ERR - NOTFOUND/ERROR ERR - ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR ERROR://ERR404 ERR404 ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR404 - - - ERR - NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR - - ERROR://ERR404 ERR ERROR://ERR404 ERR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR - ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - - ERR - ERR - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR404 ERR404 ERR404 ERR ERR ERR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - ERR ERR ERR404 ERR404 ERROR://ERR404 - - ERR404 ERR ERROR://ERR404 ERR ERR404 - ERR404 ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR404 NOTFOUND/ERROR - - - NOTFOUND/ERROR ERR ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - ERR404 ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 ERR - ERR - NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR - ERROR://ERR404 ERR ERR404 NOTFOUND/ERROR ERR404 ERR - ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 - - ERR ERROR://ERR404 ERR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR - NOTFOUND/ERROR ERR - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERROR://ERR404 ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 - ERROR://ERR404 ERROR://ERR404 ERR404 - ERR404 - NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - - ERR ERR - - ERR ERR ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR ERRERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 - NOTFOUND/ERROR ERROR://ERR404 ERR ERROR://ERR404 ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR404 NOTFOUND/ERROR ERR - ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR404 ERR ERR - ERR ERR ERR404 ERR ERROR://ERR404 - ERROR://ERR404 ERR - ERR404 - ERR ERROR://ERR404 ERR404 ERR - - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR ERR ERR NOTFOUND/ERROR ERROR://ERR404 ERROR://ERR404 ERR ERROR://ERR404 - - ERROR://ERR404 ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - ERR - ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR - ERR NOTFOUND/ERROR - ERROR://ERR404 ERR - ERR ERR - ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR - - - ERR404 - NOTFOUND/ERROR ERR - - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR - NOTFOUND/ERROR ERR - NOTFOUND/ERROR ERR ERR404 ERR404 - - ERR404 ERR ERR ERR ERR - NOTFOUND/ERROR ERR404 ERR - ERR ERR - ERROR://ERR404 ERR ERR404 ERR ERR ERR ERROR://ERR404 - - NOTFOUND/ERROR NOTFOUND/ERROR ERRERR404 NOTFOUND/ERROR ERR ERR404 - ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR - ERROR://ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR404 ERR - ERROR://ERR404 NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR ERR ERR404 - ERR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - ERR ERR - ERR - - NOTFOUND/ERROR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERROR://ERR404 - - ERR - - ERROR://ERR404 - - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - ERR - ERR ERR - - ERR NOTFOUND/ERROR - ERROR://ERR404 - - ERR - - ERR'; 
+        position:absolute; 
+        top:0; 
+        left:0; 
+        width:112%; 
+        height:100%; 
+        color: rgba(41,41,41,0.3); 
+        font-size: 12px; 
+        line-height:12px; 
+        word-wrap: break-word; 
+        z-index:1; 
+    }
+
+    .hero-content h1 { 
+        font-size: 2.5em; 
+        margin-bottom: 10px; 
+        font-weight: 400; 
+        color: #fff; 
+    }
+    .subtitle { 
+        color: #666; 
+        font-size: 1.3em; 
+        margin-bottom: 20px; 
+    }
+    .hero-content p { 
+        color: #999; 
+        margin-bottom: 30px; 
+        font-size: 1.1em; 
+    }
+
+    .btn { 
+        display: inline-block; 
+        padding: 12px 24px; 
+        background: #fff; 
+        color: #000; 
+        border-radius: 4px; 
+        font-size: .9em; 
+        transition: .2s; 
+        border: 1px solid #fff; 
+        margin-right: 10px; 
+        text-decoration: none; 
+    }
+    .btn:hover { background: #000; color: #fff; }
+    .btn-outline { background: none; color: #fff; border: 1px solid #333; }
+    .btn-outline:hover { background: #333; color: #fff; }
+
+    .section { margin-bottom: 80px; }
+    .section-title { 
+        font-size: 1.5em; 
+        margin-bottom: 30px; 
+        font-weight: 400; 
+        color: #fff; 
+    }
+    .grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); 
+        gap: 30px; 
+    }
+    .card { 
+        border-radius: 8px; 
+        padding: 25px; 
+        border: 1px solid #333; 
+        background: #111; 
+        transition: transform .2s, border-color .2s; 
+    }
+    .card:hover { 
+        border-color: #666; 
+        transform: translateY(-2px); 
+    }
+    .card h3 { 
+        margin-bottom: 15px; 
+        font-weight: 400; 
+        color: #fff; 
+    }
+    .card p { color: #999; }
+    .skill-tags { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 8px; 
+        margin-top: 10px; 
+    }
+    .skill-tag { 
+        background: #333; 
+        padding: 4px 12px; 
+        border-radius: 20px; 
+        font-size: .8em; 
+        color: #ccc; 
+    }
+
+    .contact-buttons { 
+        display: flex; 
+        gap: 15px; 
+        flex-wrap: wrap; 
+    }
+    .contact-btn { 
+        padding: 10px 20px; 
+        border: 1px solid #333; 
+        border-radius: 4px; 
+        color: #fff; 
+        text-decoration: none; 
+        transition: .2s; 
+        background: #111; 
+    }
+    .contact-btn:hover { 
+        background: #333; 
+        border-color: #666; 
+    }
+
+    footer { 
+        text-align: center; 
+        padding: 40px 0; 
+        border-top: 1px solid #333; 
+        color: #666; 
+        width: 100%;
+        margin-top: auto;
+    }
+
+    /* Language switcher */
+    .language-switcher { 
+        position: fixed; 
+        top: 20px; 
+        left: 20px; 
+        display: flex; 
+        gap: 5px; 
+        z-index: 1000; 
+    }
+    .lang-btn { 
+        background: #111; 
+        border: 1px solid #333; 
+        color: #666; 
+        padding: 5px 10px; 
+        font-size: 0.8em; 
+        cursor: pointer; 
+        font-family: 'GaisMono', monospace; 
+        transition: all 0.2s; 
+    }
+    .lang-btn.active { 
+        background: #333; 
+        color: #fff; 
+        border-color: #666; 
+    }
+    .lang-btn:hover { 
+        background: #333; 
+        color: #fff; 
+    }
+
+    [data-i18n] { 
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+    }
+    
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-content {
+        background-color: #111;
+        padding: 30px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #999;
+    }
+    
+    .modal-title {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    .modal-text {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+
+    @media (max-width: 768px) { 
+        .hero { 
+            grid-template-columns: 1fr; 
+            gap: 40px; 
+        } 
+        header { 
+            flex-direction: column; 
+            align-items: flex-start; 
+        } 
+        nav { 
+            margin-top: 20px; 
+        } 
+        nav a { 
+            margin-left: 0; 
+            margin-right: 20px; 
+        } 
+    }
+    
 </style>
 </head>
 <body>
 
-
 <div class="plus-symbol plus-top-right">+</div>
 <div class="plus-symbol plus-bottom-left">+</div>
 
-<div class="container">
-    
+<div class="container" >
+<div class="language-switcher" style="  box-shadow: 0px 0px 15px 10px rgb(15, 15, 15);">
+    <button class="lang-btn active" data-lang="sk">SK</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+
     <header>
-        
         <div>
-            <a href="#" style="text-decoration: none;"><div class="logo">Ján Vojvoda</div></a>
-            <div class="domain">C:\Website\jvsec.dev\</div>
+            <a href="#" style="text-decoration: none;">
+                <div class="logo" data-i18n="nav.name">Ján Vojvoda</div>
+            </a>
+            <div class="domain" data-i18n="nav.domain">C:\Website\jvsec.dev\</div>
         </div>
         <nav>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#work" data-i18n="nav.projects">Projekty</a>
+            <a href="#about" data-i18n="nav.about">O mne</a>
+            <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="profile-image">[Profile Image]</div>
+        <div class="profile-image" data-i18n="hero.image">[Profilová Fotka]</div>
+
         <div class="hero-content">
-            <h1>Ján Vojvoda</h1>
-            <div class="subtitle">D:\Cybersecurity_Enthusiast\</div>
-            <p>Securing digital systems and building robust security solutions. Focused on penetration testing, vulnerability assessment, and security architecture.</p>
+            <h1 data-i18n="hero.name">Ján Vojvoda</h1>
+            <div class="subtitle" data-i18n="hero.subtitle">D:\Cybersecurity_Enthusiast\</div>
+            <p data-i18n="hero.text">
+                Zaoberám sa zabezpečovaním digitálnych systémov a tvorbou robustných bezpečnostných riešení.
+                Zameriavam sa na penetračné testovanie, hodnotenie zraniteľností a bezpečnostnú architektúru.
+            </p>
             <div>
-                <a href="#contact" class="btn">Get in touch</a>
-                <a href="#work" class="btn btn-outline">View projects</a>
+                <a href="#contact" class="btn" data-i18n="hero.contact">Kontaktujte ma</a>
+                <a href="#work" class="btn btn-outline" data-i18n="hero.projects">Zobraziť projekty</a>
             </div>
         </div>
     </section>
 
     <section class="section" id="work">
-        <h2 class="section-title">Security Projects</h2>
+        <h2 class="section-title" data-i18n="work.title">Bezpečnostné Projekty</h2>
         <div class="grid">
             <div class="card">
-                <h3>Penetration Testing Framework</h3>
-                <p>Custom framework for automated security assessments and vulnerability scanning.</p>
+                <h3 data-i18n="work.pentest.title">Penetračný Framework</h3>
+                <p data-i18n="work.pentest.text">Vlastný framework na automatizované bezpečnostné testy a skenovanie zraniteľností.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Security</span>
-                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag" data-i18n="common.security">Bezpečnosť</span>
+                    <span class="skill-tag" data-i18n="common.automation">Automatizácia</span>
                 </div>
             </div>
             <div class="card">
-                <h3>Secure Authentication System</h3>
-                <p>Multi-factor authentication platform with advanced security features and monitoring.</p>
+                <h3 data-i18n="work.auth.title">Bezpečný Autentifikačný Systém</h3>
+                <p data-i18n="work.auth.text">Platforma s viacfaktorovým overovaním a pokročilými bezpečnostnými funkciami a monitoringom.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">JWT</span>
@@ -83,11 +375,11 @@
                 </div>
             </div>
             <div class="card">
-                <h3>Network Security Monitor</h3>
-                <p>Real-time network traffic analysis and intrusion detection system.</p>
+                <h3 data-i18n="work.network.title">Monitor Sieťovej Bezpečnosti</h3>
+                <p data-i18n="work.network.text">Reálny čas analýzy sieťovej prevádzky a systém detekcie prienikov.</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Go</span>
-                    <span class="skill-tag">Networking</span>
+                    <span class="skill-tag" data-i18n="common.networking">Sieťovanie</span>
                     <span class="skill-tag">IDS</span>
                 </div>
             </div>
@@ -95,15 +387,15 @@
     </section>
 
     <section class="section" id="about">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title" data-i18n="about.title">O mne</h2>
         <div class="grid">
             <div class="card">
-                <h3>Background</h3>
-                <p>Cybersecurity specialist with focus on offensive security, penetration testing, and secure system architecture. Passionate about finding and fixing security vulnerabilities.</p>
+                <h3 data-i18n="about.bg.title">Moje Pozadie</h3>
+                <p data-i18n="about.bg.text">Špecialista na kybernetickú bezpečnosť so zameraním na ofenzívnu bezpečnosť, penetračné testovanie a návrh bezpečných systémov. Rád hľadám a opravujem bezpečnostné zraniteľnosti.</p>
             </div>
             <div class="card">
-                <h3>Security Skills</h3>
-                <p>Penetration Testing • Vulnerability Assessment • Network Security • Cryptography • Security Auditing</p>
+                <h3 data-i18n="about.sec.title">Bezpečnostné Zručnosti</h3>
+                <p data-i18n="about.sec.text">Penetračné Testovanie • Hodnotenie Zraniteľností • Sieťová Bezpečnosť • Kryptografia • Bezpečnostné Audity</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Kali Linux</span>
                     <span class="skill-tag">Metasploit</span>
@@ -112,8 +404,8 @@
                 </div>
             </div>
             <div class="card">
-                <h3>Technical Skills</h3>
-                <p>Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js</p>
+                <h3 data-i18n="about.tech.title">Technické Zručnosti</h3>
+                <p data-i18n="about.tech.text">Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">JavaScript</span>
@@ -125,21 +417,20 @@
     </section>
 
     <section class="section" id="contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title" data-i18n="contact.title">Kontakt</h2>
         <div class="contact-buttons">
-            <a href="#" class="contact-btn" data-modal="email">Email</a>
-            <a href="#" class="contact-btn" data-modal="github">GitHub</a>
-            <a href="#" class="contact-btn" data-modal="linkedin">LinkedIn</a>
-            <a href="#" class="contact-btn" data-modal="pgp">PGP Key</a>
+            <a href="#" class="contact-btn" data-modal="email" data-i18n="modal.email">Email</a>
+            <a href="#" class="contact-btn" data-modal="github" data-i18n="modal.github">GitHub</a>
+            <a href="#" class="contact-btn" data-modal="linkedin" data-i18n="modal.linkedin">LinkedIn</a>
+            <a href="#" class="contact-btn" data-modal="pgp" data-i18n="modal.pgp">PGP Kľúč</a>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>© <script>document.write(/\d{4}/.exec(Date())[0])</script> Ján Vojvoda. jvsec.dev</p>
+    <p>© <script>document.write(new Date().getFullYear())</script> <span data-i18n="footer.copyright">Ján Vojvoda. jvsec.dev</span></p>
 </footer>
 
-<!-- Modal -->
 <div class="modal" id="modal">
     <div class="modal-content">
         <span class="close-btn" id="close-btn">&times;</span>
@@ -149,7 +440,149 @@
 </div>
 
 <script>
-const sections=document.querySelectorAll("header, .hero, .section"),options={threshold:.2},observer=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting?t.target.classList.add("visible"):t.target.classList.remove("visible")})},options);sections.forEach(t=>observer.observe(t));const contactButtons=document.querySelectorAll(".contact-btn"),modal=document.getElementById("modal"),modalTitle=document.getElementById("modal-title"),modalText=document.getElementById("modal-text"),closeBtn=document.getElementById("close-btn"),modalData={email:{title:"Email",text:"Ján@jvsec.dev"},github:{title:"GitHub",text:"github.com/Jánvojvoda"},linkedin:{title:"LinkedIn",text:"linkedin.com/in/Jánvojvoda"},pgp:{title:"PGP Key",text:"-----BEGIN PGP PUBLIC KEY BLOCK-----\n[Your PGP Key]\n-----END PGP PUBLIC KEY BLOCK-----"}};contactButtons.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();t=e.getAttribute("data-modal"),t=modalData[t];modalTitle.textContent=t.title,modalText.textContent=t.text,modal.classList.add("active")})}),closeBtn.addEventListener("click",()=>modal.classList.remove("active")),modal.addEventListener("click",t=>{t.target===modal&&modal.classList.remove("active")});
+const translations = {
+    sk: {
+        "nav.name": "Ján Vojvoda",
+        "nav.domain": "C:\\Website\\jvsec.dev\\",
+        "nav.projects":"Projekty",
+        "nav.about":"O mne",
+        "nav.contact":"Kontakt",
+        "hero.name": "Ján Vojvoda",
+        "hero.image": "[Profilová Fotka]",
+        "hero.subtitle":"D:\\Cybersecurity_Enthusiast\\",
+        "hero.text":"Zaoberám sa zabezpečovaním digitálnych systémov a tvorbou robustných bezpečnostných riešení. Zameriavam sa na penetračné testovanie, hodnotenie zraniteľností a bezpečnostnú architektúru.",
+        "hero.contact":"Kontaktujte ma",
+        "hero.projects":"Zobraziť projekty",
+        "work.title":"Bezpečnostné Projekty",
+        "work.pentest.title":"Penetračný Framework",
+        "work.pentest.text":"Vlastný framework na automatizované bezpečnostné testy a skenovanie zraniteľností.",
+        "work.auth.title":"Bezpečný Autentifikačný Systém",
+        "work.auth.text":"Platforma s viacfaktorovým overovaním a pokročilými bezpečnostnými funkciami a monitoringom.",
+        "work.network.title":"Monitor Sieťovej Bezpečnosti",
+        "work.network.text":"Reálny čas analýzy sieťovej prevádzky a systém detekcie prienikov.",
+        "about.title":"O mne",
+        "about.bg.title":"Moje Pozadie",
+        "about.bg.text":"Špecialista na kybernetickú bezpečnosť so zameraním na ofenzívnu bezpečnosť, penetračné testovanie a návrh bezpečných systémov. Rád hľadám a opravujem bezpečnostné zraniteľnosti.",
+        "about.sec.title":"Bezpečnostné Zručnosti",
+        "about.sec.text":"Penetračné Testovanie • Hodnotenie Zraniteľností • Sieťová Bezpečnosť • Kryptografia • Bezpečnostné Audity",
+        "about.tech.title":"Technické Zručnosti",
+        "about.tech.text":"Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
+        "contact.title":"Kontakt",
+        "footer.copyright": "Ján Vojvoda. jvsec.dev",
+        "common.security":"Bezpečnosť",
+        "common.automation":"Automatizácia",
+        "common.networking":"Sieťovanie",
+        "modal.email":"Email",
+        "modal.github":"GitHub",
+        "modal.linkedin":"LinkedIn",
+        "modal.pgp":"PGP Kľúč",
+        "modal.email_text":"Ján@jvsec.dev",
+        "modal.github_text":"github.com/janvojvoda",
+        "modal.linkedin_text":"linkedin.com/in/janvojvoda",
+        "modal.pgp_text":"-----BEGIN PGP PUBLIC KEY BLOCK-----\n[Your PGP Key]\n-----END PGP PUBLIC KEY BLOCK-----"
+    },
+    en: {
+        "nav.name": "Ján Vojvoda",
+        "nav.domain": "C:\\Website\\jvsec.dev\\",
+        "nav.projects":"Projects",
+        "nav.about":"About Me",
+        "nav.contact":"Contact",
+        "hero.name": "Ján Vojvoda",
+        "hero.image": "[Profile Photo]",
+        "hero.subtitle":"D:\\Cybersecurity_Enthusiast\\",
+        "hero.text":"I focus on securing digital systems and creating robust security solutions. My work includes penetration testing, vulnerability assessment, and security architecture.",
+        "hero.contact":"Contact Me",
+        "hero.projects":"View Projects",
+        "work.title":"Security Projects",
+        "work.pentest.title":"Penetration Framework",
+        "work.pentest.text":"A custom framework for automated security testing and vulnerability scanning.",
+        "work.auth.title":"Secure Authentication System",
+        "work.auth.text":"A platform featuring multi-factor authentication, advanced security features, and monitoring.",
+        "work.network.title":"Network Security Monitor",
+        "work.network.text":"Real-time network traffic analysis and an intrusion detection system.",
+        "about.title":"About Me",
+        "about.bg.title":"My Background",
+        "about.bg.text":"A cybersecurity specialist focused on offensive security, penetration testing, and secure system design. I enjoy discovering and fixing security vulnerabilities.",
+        "about.sec.title":"Security Skills",
+        "about.sec.text":"Penetration Testing • Vulnerability Assessment • Network Security • Cryptography • Security Audits",
+        "about.tech.title":"Technical Skills",
+        "about.tech.text":"Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
+        "contact.title":"Contact",
+        "footer.copyright": "Ján Vojvoda. jvsec.dev",
+        "common.security":"Security",
+        "common.automation":"Automation",
+        "common.networking":"Networking",
+        "modal.email":"Email",
+        "modal.github":"GitHub",
+        "modal.linkedin":"LinkedIn",
+        "modal.pgp":"PGP Key",
+        "modal.email_text":"Ján@jvsec.dev",
+        "modal.github_text":"github.com/janvojvoda",
+        "modal.linkedin_text":"linkedin.com/in/janvojvoda",
+        "modal.pgp_text":"-----BEGIN PGP PUBLIC KEY BLOCK-----\n[Your PGP Key]\n-----END PGP PUBLIC KEY BLOCK-----"
+    }
+};
+
+let currentLang = "sk";
+
+function applyTranslations(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+}
+
+function switchLanguage(lang) {
+    if(currentLang===lang) return;
+    const elements = document.querySelectorAll("[data-i18n]");
+    elements.forEach(el=>{
+        el.style.opacity=0; 
+        el.style.transform="translateY(10px)"; 
+        el.style.transition="opacity 0.3s, transform 0.3s";
+    });
+    setTimeout(()=>{
+        applyTranslations(lang);
+        elements.forEach(el=>{
+            el.style.opacity=1; 
+            el.style.transform="translateY(0)";
+        });
+    },300);
+    document.querySelectorAll(".lang-btn").forEach(btn=>btn.classList.toggle("active", btn.getAttribute("data-lang")===lang));
+    currentLang=lang;
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>switchLanguage(btn.getAttribute("data-lang")));
+});
+
+// Modal
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalText = document.getElementById("modal-text");
+document.querySelectorAll(".contact-btn").forEach(btn=>{
+    btn.addEventListener("click", e=>{
+        e.preventDefault();
+        const key = btn.getAttribute("data-modal");
+        modalTitle.textContent = translations[currentLang]["modal."+key];
+        modalText.textContent = translations[currentLang]["modal."+key+"_text"];
+        modal.style.display="flex";
+    });
+});
+document.getElementById("close-btn").addEventListener("click",()=>modal.style.display="none");
+window.addEventListener("click",e=>{if(e.target===modal) modal.style.display="none";});
+
+// Improved animation on scroll
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+},{threshold:0.1});
+document.querySelectorAll("header, .hero, .section").forEach(el=>observer.observe(el));
+
+applyTranslations(currentLang);
 </script>
+
 </body>
 </html>
