@@ -5,312 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ján Vojvoda - Cybersecurity</title>
 <style>
-    body { 
-        background-color: #000; 
-        color: #fff; 
-        font-family: 'GaisMono', monospace; 
-        margin: 0; 
-        padding: 0; 
-        line-height: 1.6; 
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-    body::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: radial-gradient(circle, #6b6b6b 1px, transparent 1px);
-        background-size: 20px 20px;
-        opacity: 0.2;
-        z-index: 0;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    
-    /* Improved animations */
-    header, .hero, .section { 
-        opacity: 0; 
-        transform: translateY(20px); 
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
-    }
-    header.visible, .hero.visible, .section.visible { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-
-    .container { 
-        max-width: 1000px; 
-        margin: 0 auto; 
-        padding: 60px 20px; 
-        position: relative; 
-        z-index: 2; 
-        flex: 1;
-    }
-    .plus-symbol { 
-        position: fixed; 
-        font-size: 28px; 
-        opacity: .25; 
-        z-index: 1; 
-    }
-    .plus-top-right { top: 20px; right: 20px; }
-    .plus-bottom-left { bottom: 20px; left: 20px; }
-
-    header { 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        margin-bottom: 80px; 
-        padding-bottom: 20px; 
-        border-bottom: 1px solid #333; 
-    }
-    .logo { font-weight: 700; font-size: 1.2em; color: #fff; }
-    .domain { color: #666; font-size: .9em; }
-    nav a { 
-        color: #fff; 
-        margin-left: 30px; 
-        text-decoration: none; 
-        transition: color .2s; 
-        font-size: .9em; 
-    }
-    nav a:hover { color: #ccc; }
-
-    .hero { 
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        gap: 60px; 
-        margin-bottom: 100px; 
-    }
-    .profile-image { 
-        width: 100%; 
-        height: 300px; 
-        background-color: #111; 
-        border: 1px solid #333; 
-        border-radius: 8px; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        font-size: 1.2em; 
-        color: #666; 
-        position: relative; 
-        overflow: hidden; 
-    }
-    .profile-image::before { 
-        content:'ERR ERROR://ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR - ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR - ERR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - NOTFOUND/ERROR ERR ERR ERR NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR - - - - ERR404 ERR ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR - ERR404 ERR ERROR://ERR404 ERR ERROR://ERR404 - ERR ERR ERR404 ERR ERR404 - - ERR ERROR://ERR404 ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR404 ERR404 ERR ERR ERR - - ERR ERR ERR - ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR ERR ERR - ERR - NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR ERR404 - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR - ERR ERR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERR ERR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR404 NOTFOUND/ERROR - - NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR ERR404 - NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 - ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 - NOTFOUND/ERROR ERR ERR - ERR ERR ERR - NOTFOUND/ERROR ERR ERR ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - ERR ERR - - ERROR://ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 - NOTFOUND/ERROR - - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERR ERR NOTFOUND/ERROR ERR ERR404 - - NOTFOUND/ERROR - - - - ERR404 ERROR://ERR404 ERROR://ERR404 ERR ERR ERR ERR ERR404 ERR - ERROR://ERR404 - ERR ERR NOTFOUND/ERROR ERR ERR404 - ERR - NOTFOUND/ERROR ERR - ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR ERROR://ERR404 ERR404 ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR404 - - - ERR - NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR - - ERROR://ERR404 ERR ERROR://ERR404 ERR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR - ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - - ERR - ERR - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR404 ERR404 ERR404 ERR ERR ERR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - ERR ERR ERR404 ERR404 ERROR://ERR404 - - ERR404 ERR ERROR://ERR404 ERR ERR404 - ERR404 ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR404 NOTFOUND/ERROR - - - NOTFOUND/ERROR ERR ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - ERR404 ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 ERR - ERR - NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR - ERROR://ERR404 ERR ERR404 NOTFOUND/ERROR ERR404 ERR - ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 - - ERR ERROR://ERR404 ERR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR - NOTFOUND/ERROR ERR - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERROR://ERR404 ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 - ERROR://ERR404 ERROR://ERR404 ERR404 - ERR404 - NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - - ERR ERR - - ERR ERR ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR ERRERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 - NOTFOUND/ERROR ERROR://ERR404 ERR ERROR://ERR404 ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR404 NOTFOUND/ERROR ERR - ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR404 ERR ERR - ERR ERR ERR404 ERR ERROR://ERR404 - ERROR://ERR404 ERR - ERR404 - ERR ERROR://ERR404 ERR404 ERR - - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR ERR ERR NOTFOUND/ERROR ERROR://ERR404 ERROR://ERR404 ERR ERROR://ERR404 - - ERROR://ERR404 ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - ERR - ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR - ERR NOTFOUND/ERROR - ERROR://ERR404 ERR - ERR ERR - ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR - - - ERR404 - NOTFOUND/ERROR ERR - - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR - NOTFOUND/ERROR ERR - NOTFOUND/ERROR ERR ERR404 ERR404 - - ERR404 ERR ERR ERR ERR - NOTFOUND/ERROR ERR404 ERR - ERR ERR - ERROR://ERR404 ERR ERR404 ERR ERR ERR ERROR://ERR404 - - NOTFOUND/ERROR NOTFOUND/ERROR ERRERR404 NOTFOUND/ERROR ERR ERR404 - ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR - ERROR://ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR404 ERR - ERROR://ERR404 NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR ERR ERR404 - ERR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - ERR ERR - ERR - - NOTFOUND/ERROR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERROR://ERR404 - - ERR - - ERROR://ERR404 - - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - ERR - ERR ERR - - ERR NOTFOUND/ERROR - ERROR://ERR404 - - ERR - - ERR'; 
-        position:absolute; 
-        top:0; 
-        left:0; 
-        width:112%; 
-        height:100%; 
-        color: rgba(41,41,41,0.3); 
-        font-size: 12px; 
-        line-height:12px; 
-        word-wrap: break-word; 
-        z-index:1; 
-    }
-
-    .hero-content h1 { 
-        font-size: 2.5em; 
-        margin-bottom: 10px; 
-        font-weight: 400; 
-        color: #fff; 
-    }
-    .subtitle { 
-        color: #666; 
-        font-size: 1.3em; 
-        margin-bottom: 20px; 
-    }
-    .hero-content p { 
-        color: #999; 
-        margin-bottom: 30px; 
-        font-size: 1.1em; 
-    }
-
-    .btn { 
-        display: inline-block; 
-        padding: 12px 24px; 
-        background: #fff; 
-        color: #000; 
-        border-radius: 4px; 
-        font-size: .9em; 
-        transition: .2s; 
-        border: 1px solid #fff; 
-        margin-right: 10px; 
-        text-decoration: none; 
-    }
-    .btn:hover { background: #000; color: #fff; }
-    .btn-outline { background: none; color: #fff; border: 1px solid #333; }
-    .btn-outline:hover { background: #333; color: #fff; }
-
-    .section { margin-bottom: 80px; }
-    .section-title { 
-        font-size: 1.5em; 
-        margin-bottom: 30px; 
-        font-weight: 400; 
-        color: #fff; 
-    }
-    .grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); 
-        gap: 30px; 
-    }
-    .card { 
-        border-radius: 8px; 
-        padding: 25px; 
-        border: 1px solid #333; 
-        background: #111; 
-        transition: transform .2s, border-color .2s; 
-    }
-    .card:hover { 
-        border-color: #666; 
-        transform: translateY(-2px); 
-    }
-    .card h3 { 
-        margin-bottom: 15px; 
-        font-weight: 400; 
-        color: #fff; 
-    }
-    .card p { color: #999; }
-    .skill-tags { 
-        display: flex; 
-        flex-wrap: wrap; 
-        gap: 8px; 
-        margin-top: 10px; 
-    }
-    .skill-tag { 
-        background: #333; 
-        padding: 4px 12px; 
-        border-radius: 20px; 
-        font-size: .8em; 
-        color: #ccc; 
-    }
-
-    .contact-buttons { 
-        display: flex; 
-        gap: 15px; 
-        flex-wrap: wrap; 
-    }
-    .contact-btn { 
-        padding: 10px 20px; 
-        border: 1px solid #333; 
-        border-radius: 4px; 
-        color: #fff; 
-        text-decoration: none; 
-        transition: .2s; 
-        background: #111; 
-    }
-    .contact-btn:hover { 
-        background: #333; 
-        border-color: #666; 
-    }
-
-    footer { 
-        text-align: center; 
-        padding: 40px 0; 
-        border-top: 1px solid #333; 
-        color: #666; 
-        width: 100%;
-        margin-top: auto;
-    }
-
-    /* Language switcher */
-    .language-switcher { 
-        position: fixed; 
-        top: 20px; 
-        left: 20px; 
-        display: flex; 
-        gap: 5px; 
-        z-index: 1000; 
-    }
-    .lang-btn { 
-        background: #111; 
-        border: 1px solid #333; 
-        color: #666; 
-        padding: 5px 10px; 
-        font-size: 0.8em; 
-        cursor: pointer; 
-        font-family: 'GaisMono', monospace; 
-        transition: all 0.2s; 
-    }
-    .lang-btn.active { 
-        background: #333; 
-        color: #fff; 
-        border-color: #666; 
-    }
-    .lang-btn:hover { 
-        background: #333; 
-        color: #fff; 
-    }
-
-    [data-i18n] { 
-        transition: opacity 0.3s ease, transform 0.3s ease; 
-    }
-    
-    /* Modal styles */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .modal-content {
-        background-color: #111;
-        padding: 30px;
-        border-radius: 8px;
-        border: 1px solid #333;
-        max-width: 500px;
-        width: 90%;
-        position: relative;
-    }
-    
-    .close-btn {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 24px;
-        cursor: pointer;
-        color: #999;
-    }
-    
-    .modal-title {
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-    
-    .modal-text {
-        white-space: pre-wrap;
-        word-break: break-all;
-    }
-
-    @media (max-width: 768px) { 
-        .hero { 
-            grid-template-columns: 1fr; 
-            gap: 40px; 
-        } 
-        header { 
-            flex-direction: column; 
-            align-items: flex-start; 
-        } 
-        nav { 
-            margin-top: 20px; 
-        } 
-        nav a { 
-            margin-left: 0; 
-            margin-right: 20px; 
-        } 
-    }
-    
+body,header{display:flex}.logo,body,nav a{color:#fff}.btn,.contact-btn,nav a{text-decoration:none}.lang-btn,body{font-family:GaisMono,monospace}body{background-color:#000;margin:0;padding:0;line-height:1.6;min-height:100vh;max-height:100%;flex-direction:column}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle,#757575 1px,transparent 1px);background-size:20px 20px;opacity:.2;z-index:0}*{box-sizing:border-box}html{scroll-behavior:smooth}.hero,.section,header{opacity:0;transform:translateY(20px);transition:opacity .8s ease-out,transform .8s ease-out}.hero.visible,.section.visible,header.visible{opacity:1;transform:translateY(0)}.container{max-width:1000px;margin:0 auto;padding:60px 20px;position:relative;z-index:2;flex:1}.plus-symbol{position:fixed;font-size:28px;opacity:.25;z-index:1}.plus-top-right{top:20px;right:20px}.plus-bottom-left{bottom:20px;left:20px}header{justify-content:space-between;align-items:center;margin-bottom:80px;padding-bottom:20px;border-bottom:1px solid #333}.logo{font-weight:700;font-size:1.2em}.domain,nav a{font-size:.9em}.domain{color:#666}nav a{margin-left:30px;transition:color .2s}nav a:hover{color:#ccc}.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:100px}.profile-image{width:100%;height:300px;background-color:#111;border:1px solid #333;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2em;color:#666;position:relative;overflow:hidden}.language-switcher,.modal{position:fixed;z-index:1000}.profile-image::before{content:'ERR ERROR://ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR - ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR - ERR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - NOTFOUND/ERROR ERR ERR ERR NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR - - - - ERR404 ERR ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR - ERR404 ERR ERROR://ERR404 ERR ERROR://ERR404 - ERR ERR ERR404 ERR ERR404 - - ERR ERROR://ERR404 ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR404 ERR404 ERR ERR ERR - - ERR ERR ERR - ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR ERR ERR - ERR - NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 ERROR://ERR404 ERR ERR404 ERR - - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR ERR404 - ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR - ERR ERR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERR ERR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR404 NOTFOUND/ERROR - - NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR ERR404 - NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERROR://ERR404 ERR - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR404 - ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 - NOTFOUND/ERROR ERR ERR - ERR ERR ERR - NOTFOUND/ERROR ERR ERR ERROR://ERR404 ERR ERR NOTFOUND/ERROR ERROR://ERR404 - ERR ERR - - ERROR://ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 - NOTFOUND/ERROR - - NOTFOUND/ERROR - - NOTFOUND/ERROR ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERR ERR NOTFOUND/ERROR ERR ERR404 - - NOTFOUND/ERROR - - - - ERR404 ERROR://ERR404 ERROR://ERR404 ERR ERR ERR ERR ERR404 ERR - ERROR://ERR404 - ERR ERR NOTFOUND/ERROR ERR ERR404 - ERR - NOTFOUND/ERROR ERR - ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR ERROR://ERR404 ERR404 ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR404 - - - ERR - NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR - - ERROR://ERR404 ERR ERROR://ERR404 ERR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR - ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR - NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - - ERR - ERR - NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR404 ERR404 ERR404 ERR ERR ERR ERR ERROR://ERR404 ERROR://ERR404 ERROR://ERR404 - ERR ERR ERR404 ERR404 ERROR://ERR404 - - ERR404 ERR ERROR://ERR404 ERR ERR404 - ERR404 ERROR://ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR404 NOTFOUND/ERROR - - - NOTFOUND/ERROR ERR ERR404 ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR - ERROR://ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - ERR404 ERR ERROR://ERR404 NOTFOUND/ERROR ERR404 ERR NOTFOUND/ERROR ERR ERROR://ERR404 ERR404 ERR - ERR - NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERR - ERROR://ERR404 ERR ERR404 NOTFOUND/ERROR ERR404 ERR - ERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 - - ERR ERROR://ERR404 ERR ERROR://ERR404 - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - NOTFOUND/ERROR ERROR://ERR404 ERR ERR - NOTFOUND/ERROR ERR - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERROR://ERR404 ERR ERR - - NOTFOUND/ERROR ERROR://ERR404 - ERROR://ERR404 ERROR://ERR404 ERR404 - ERR404 - NOTFOUND/ERROR ERR ERR404 ERR404 NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - - ERR ERR - - ERR ERR ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - ERR ERRERR404 ERR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERROR://ERR404 ERR404 - NOTFOUND/ERROR ERROR://ERR404 ERR ERROR://ERR404 ERROR://ERR404 - ERR404 ERR ERROR://ERR404 - ERR404 NOTFOUND/ERROR ERR - ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR404 ERR ERR - ERR ERR ERR404 ERR ERROR://ERR404 - ERROR://ERR404 ERR - ERR404 - ERR ERROR://ERR404 ERR404 ERR - - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 ERR ERR ERR NOTFOUND/ERROR ERR ERR404 NOTFOUND/ERROR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR - ERROR://ERR404 ERR ERR ERR NOTFOUND/ERROR ERROR://ERR404 ERROR://ERR404 ERR ERROR://ERR404 - - ERROR://ERR404 ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR ERR404 NOTFOUND/ERROR - - ERR - ERROR://ERR404 ERR NOTFOUND/ERROR ERR ERR ERR ERR ERR - ERR NOTFOUND/ERROR - ERROR://ERR404 ERR - ERR ERR - ERR NOTFOUND/ERROR ERROR://ERR404 - NOTFOUND/ERROR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR - ERR404 ERROR://ERR404 ERR404 ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR - - - ERR404 - NOTFOUND/ERROR ERR - - ERR ERROR://ERR404 ERR NOTFOUND/ERROR ERR404 ERR ERR NOTFOUND/ERROR - NOTFOUND/ERROR - NOTFOUND/ERROR ERR - NOTFOUND/ERROR ERR ERR404 ERR404 - - ERR404 ERR ERR ERR ERR - NOTFOUND/ERROR ERR404 ERR - ERR ERR - ERROR://ERR404 ERR ERR404 ERR ERR ERR ERROR://ERR404 - - NOTFOUND/ERROR NOTFOUND/ERROR ERRERR404 NOTFOUND/ERROR ERR ERR404 - ERR ERR NOTFOUND/ERROR NOTFOUND/ERROR ERR NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR ERROR://ERR404 NOTFOUND/ERROR NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR NOTFOUND/ERROR - ERROR://ERR404 NOTFOUND/ERROR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - NOTFOUND/ERROR ERR404 ERR - ERROR://ERR404 NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR ERR ERR404 - ERR ERR ERROR://ERR404 ERR NOTFOUND/ERROR - ERR ERR - ERR - - NOTFOUND/ERROR ERR ERR ERROR://ERR404 NOTFOUND/ERROR ERR ERR - NOTFOUND/ERROR NOTFOUND/ERROR ERR ERR ERR - ERROR://ERR404 - - ERR - - ERROR://ERR404 - - ERR NOTFOUND/ERROR - ERR404 NOTFOUND/ERROR ERR404 - ERR - ERR ERR - - ERR NOTFOUND/ERROR - ERROR://ERR404 - - ERR - - ERR';position:absolute;top:0;left:0;width:112%;height:100%;color:rgba(41,41,41,.3);font-size:12px;line-height:12px;word-wrap:break-word;z-index:1}.hero-content h1{font-size:2.5em;margin-bottom:10px;font-weight:400;color:#fff}.subtitle{color:#666;font-size:1.3em;margin-bottom:20px}.hero-content p{color:#999;margin-bottom:30px;font-size:1.1em}.btn{display:inline-block;padding:12px 24px;background:#fff;color:#000;border-radius:4px;font-size:.9em;transition:.2s;border:1px solid #fff;margin-right:10px}.btn:hover{background:#000;color:#fff}.btn-outline{background:0 0;color:#fff;border:1px solid #333}.btn-outline:hover,.lang-btn:hover{background:#333;color:#fff}.section{margin-bottom:80px}.section-title{font-size:1.5em;margin-bottom:30px;font-weight:400;color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px}.card{border-radius:8px;padding:25px;border:1px solid #333;background:#111;transition:transform .2s,border-color .2s}.card:hover{border-color:#666;transform:translateY(-2px)}.card h3{margin-bottom:15px;font-weight:400;color:#fff}.card p{color:#999}.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.skill-tag{background:#333;padding:4px 12px;border-radius:20px;font-size:.8em;color:#ccc}.contact-btn,.lang-btn{background:#111;transition:.2s}.contact-buttons{display:flex;gap:15px;flex-wrap:wrap}.contact-btn{padding:10px 20px;border:1px solid #333;border-radius:4px;color:#fff}.contact-btn:hover{background:#333;border-color:#666}footer{text-align:center;padding:40px 0;border-top:1px solid #333;color:#666;width:100%;margin-top:auto}.language-switcher{top:20px;left:20px;display:flex;gap:5px}.lang-btn{border:1px solid #333;color:#666;padding:5px 10px;font-size:.8em;cursor:pointer}.lang-btn.active{background:#333;color:#fff;border-color:#666}[data-i18n]{transition:opacity .3s,transform .3s}.modal{display:none;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.8);justify-content:center;align-items:center}.close-btn{position:absolute;top:15px;right:15px;font-size:24px;cursor:pointer;color:#999}.modal-title{margin-top:0;margin-bottom:15px}.modal-text{white-space:pre-wrap;word-break:break-all}@media (max-width:768px){.hero{grid-template-columns:1fr;gap:40px}header{flex-direction:column;align-items:flex-start}nav{margin-top:20px}nav a{margin-left:0;margin-right:20px}}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center}.modal-content{background-color:#222;padding:25px;border-radius:8px;width:auto;min-width:250px;max-width:650px;display:inline-block;box-shadow:0 4px 20px rgba(0,0,0,.5);position:relative}.close-btn{position:absolute;top:15px;right:15px;font-size:24px;cursor:pointer;color:#999}.close-btn:hover{color:#fff}.modal-title{margin-top:0;margin-bottom:20px;color:#fff;font-size:1.4em}.card{background:#1a1a1a;border-radius:8px;padding:20px;margin:15px 0;transition:transform .2s,box-shadow .2s;cursor:pointer}.card:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,.3)}.skill-tags{margin-top:15px}.skill-tag{display:inline-block;background:#333;color:#ccc;padding:4px 10px;border-radius:4px;margin-right:8px;font-size:.8em}#toggle-password:hover{background:#333!important}#generate-password:hover{background:#444!important}
 </style>
 </head>
 <body>
+
 
 <div class="plus-symbol plus-top-right">+</div>
 <div class="plus-symbol plus-bottom-left">+</div>
@@ -347,8 +47,8 @@
                 Zameriavam sa na penetračné testovanie, hodnotenie zraniteľností a bezpečnostnú architektúru.
             </p>
             <div>
-                <a href="#contact" class="btn" data-i18n="hero.contact">Kontaktujte ma</a>
-                <a href="#work" class="btn btn-outline" data-i18n="hero.projects">Zobraziť projekty</a>
+                <a href="#contact" class="btn" data-i18n="hero.contact">Kontakt</a>
+                <a href="#work" class="btn btn-outline" data-i18n="hero.projects">Moje projekty</a>
             </div>
         </div>
     </section>
@@ -383,6 +83,87 @@
                     <span class="skill-tag">IDS</span>
                 </div>
             </div>
+
+<div class="card" id="password-checker-card">
+    <h3 data-i18n="work.passw.title">Jednoduchá Kontrola Hesiel</h3>
+    <p data-i18n="work.passw.text">Skontrolujte silu svojho hesla priamo tu.</p>
+    <div class="skill-tags">
+        <span class="skill-tag">JS</span>
+        <span class="skill-tag">Security</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">HTML</span>
+    </div>
+</div>
+
+<!-- Password Checker Modal -->
+<div class="modal" id="password-modal">
+    <div class="modal-content" id="password-modal-content">
+        <span class="close-btn" id="password-close-btn">&times;</span>
+        <h2 class="modal-title" data-i18n="passw.modal.title">Skontrolujte Heslo</h2>
+        
+        <div style="position: relative; margin-bottom: 20px;">
+            <input type="password" id="password-input" placeholder="Zadajte heslo" data-i18n-placeholder="passw.input.placeholder"
+                style="width:100%; padding:12px 45px 12px 15px; border-radius:5px; border:1px solid #333; background:#111; color:#fff; font-size:1em;">
+            <button id="toggle-password" type="button"
+                style="
+                    position:absolute;
+                    right:5px;
+                    top:50%;
+                    transform:translateY(-50%);
+                    border:none;
+                    background:transparent;
+                    color:#999;
+                    width:32px;
+                    height:32px;
+                    cursor:pointer;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    border-radius:4px;
+                    font-size: 1.2em;
+                ">
+                <svg id="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </button>
+        </div>
+        
+        <div id="password-strength" style="margin-bottom: 15px; text-align: center; font-weight: bold; padding: 8px; border-radius: 4px;" data-i18n="passw.strength.default">
+            <!-- Strength indicator will appear here -->
+        </div>
+        
+        <ul id="password-requirements" style="list-style:none; padding-left:0; color:#999; font-size:0.9em; margin-bottom: 20px;">
+            <li id="req-length" data-i18n="passw.req.length">8+ znakov</li>
+            <li id="req-uppercase" data-i18n="passw.req.uppercase">Veľké písmeno [A, B, C, ...]</li>
+            <li id="req-lowercase" data-i18n="passw.req.lowercase">Malé písmeno [a, b, c, ...]</li>
+            <li id="req-number" data-i18n="passw.req.number">Číslo [0, 1, 2, ...]</li>
+            <li id="req-symbol" data-i18n="passw.req.symbol">Symbol [!, @, #, ...]</li>
+        </ul>
+
+        <!-- Generate Password Button -->
+        <button id="generate-password" style="
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+            transition: background 0.2s;
+        " data-i18n="passw.generate">Vygenerovať silné heslo</button>
+    </div>
+</div>
+
+
+
+<script>
+const passwordModal=document.getElementById("password-modal"),passwordCloseBtn=document.getElementById("password-close-btn"),passwordInput=document.getElementById("password-input"),togglePassword=document.getElementById("toggle-password"),eyeIcon=document.getElementById("eye-icon"),passwordStrength=document.getElementById("password-strength"),generatePasswordBtn=document.getElementById("generate-password"),requirements={length:document.getElementById("req-length"),uppercase:document.getElementById("req-uppercase"),lowercase:document.getElementById("req-lowercase"),number:document.getElementById("req-number"),symbol:document.getElementById("req-symbol")},strengthMessages={weak:{sk:"Slabé",en:"Weak"},medium:{sk:"Stredné",en:"Medium"},strong:{sk:"Silné",en:"Strong"}},passwordCard=document.getElementById("password-checker-card");function aktualizujKontroluHesla(e){requirements.length.style.color=8<=e.length?"#a2ff3d":"#999",requirements.uppercase.style.color=/[A-Z]/.test(e)?"#a2ff3d":"#999",requirements.lowercase.style.color=/[a-z]/.test(e)?"#a2ff3d":"#999",requirements.number.style.color=/[0-9]/.test(e)?"#a2ff3d":"#999",requirements.symbol.style.color=/[^A-Za-z0-9]/.test(e)?"#a2ff3d":"#999"}function aktualizujSiluHesla(e){let t=0,s="",a="#999";if(8<=e.length&&t++,/[A-Z]/.test(e)&&t++,/[a-z]/.test(e)&&t++,/[0-9]/.test(e)&&t++,/[^A-Za-z0-9]/.test(e)&&t++,0===e.length)return passwordStrength.textContent="",void(passwordStrength.style.backgroundColor="transparent");a=t<=2?(s="weak","#ff3d3d"):t<=4?(s="medium","#ffaa00"):(s="strong","#a2ff3d"),passwordStrength.textContent=strengthMessages[s][currentLang],passwordStrength.style.color=a,passwordStrength.style.backgroundColor=a+"20"}passwordCard.addEventListener("click",()=>{passwordModal.style.display="flex",aktualizujKontroluHesla(passwordInput.value=""),aktualizujSiluHesla(""),passwordInput.focus()}),passwordCloseBtn.addEventListener("click",()=>{passwordModal.style.display="none"}),window.addEventListener("click",e=>{e.target===passwordModal&&(passwordModal.style.display="none")}),togglePassword.addEventListener("click",()=>{"password"===passwordInput.type?(passwordInput.type="text",eyeIcon.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>'):(passwordInput.type="password",eyeIcon.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>')}),generatePasswordBtn.addEventListener("click",()=>{var e="ABCDEFGHIJKLMNOPQRSTUVWXYZ",t="abcdefghijklmnopqrstuvwxyz",s="0123456789",a="!@#$%^&*()_+-=[]{}|;:,.<>?",n=e+t+s+a,o=Math.floor(9*Math.random())+8;let r=e[Math.floor(Math.random()*e.length)]+t[Math.floor(Math.random()*t.length)]+s[Math.floor(Math.random()*s.length)]+a[Math.floor(Math.random()*a.length)];for(let e=4;e<o;e++)r+=n[Math.floor(Math.random()*n.length)];r=r.split("").sort(()=>Math.random()-.5).join(""),passwordInput.value=r,aktualizujKontroluHesla(r),aktualizujSiluHesla(r)}),passwordInput.addEventListener("input",()=>{aktualizujKontroluHesla(passwordInput.value),aktualizujSiluHesla(passwordInput.value)});
+</script>
+
+
         </div>
     </section>
 
@@ -444,145 +225,123 @@ const translations = {
     sk: {
         "nav.name": "Ján Vojvoda",
         "nav.domain": "C:\\Website\\jvsec.dev\\",
-        "nav.projects":"Projekty",
-        "nav.about":"O mne",
-        "nav.contact":"Kontakt",
+        "nav.projects": "Projekty",
+        "nav.about": "O mne",
+        "nav.contact": "Kontakt",
         "hero.name": "Ján Vojvoda",
         "hero.image": "[Profilová Fotka]",
-        "hero.subtitle":"D:\\Cybersecurity_Enthusiast\\",
-        "hero.text":"Zaoberám sa zabezpečovaním digitálnych systémov a tvorbou robustných bezpečnostných riešení. Zameriavam sa na penetračné testovanie, hodnotenie zraniteľností a bezpečnostnú architektúru.",
-        "hero.contact":"Kontakt",
-        "hero.projects":"Moje projekty",
-        "work.title":"Bezpečnostné Projekty",
-        "work.pentest.title":"Penetračný Framework",
-        "work.pentest.text":"Vlastný framework na automatizované bezpečnostné testy a skenovanie zraniteľností.",
-        "work.auth.title":"Bezpečný Autentifikačný Systém",
-        "work.auth.text":"Platforma s viacfaktorovým overovaním a pokročilými bezpečnostnými funkciami a monitoringom.",
-        "work.network.title":"Monitor Sieťovej Bezpečnosti",
-        "work.network.text":"Reálny čas analýzy sieťovej prevádzky a systém detekcie prienikov.",
-        "about.title":"O mne",
-        "about.bg.title":"Moje Pozadie",
-        "about.bg.text":"Špecialista na kybernetickú bezpečnosť so zameraním na ofenzívnu bezpečnosť, penetračné testovanie a návrh bezpečných systémov. Rád hľadám a opravujem bezpečnostné zraniteľnosti.",
-        "about.sec.title":"Bezpečnostné Zručnosti",
-        "about.sec.text":"Penetračné Testovanie • Hodnotenie Zraniteľností • Sieťová Bezpečnosť • Kryptografia • Bezpečnostné Audity",
-        "about.tech.title":"Technické Zručnosti",
-        "about.tech.text":"Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
-        "contact.title":"Kontakt",
+        "hero.subtitle": "D:\\Cybersecurity_Enthusiast\\",
+        "hero.text":
+            "Zaoberám sa zabezpečovaním digitálnych systémov a tvorbou robustných bezpečnostných riešení. Zameriavam sa na penetračné testovanie, hodnotenie zraniteľností a bezpečnostnú architektúru.",
+        "hero.contact": "Kontakt",
+        "hero.projects": "Moje projekty",
+        "work.title": "C:\\Bezpečnostné-Projekty",
+        "work.pentest.title": "Penetračný Framework",
+        "work.pentest.text": "Vlastný framework na automatizované bezpečnostné testy a skenovanie zraniteľností.",
+        "work.auth.title": "Bezpečný Autentifikačný Systém",
+        "work.auth.text":
+            "Platforma s viacfaktorovým overovaním a pokročilými bezpečnostnými funkciami a monitoringom.",
+        "work.network.title": "Monitor Sieťovej Bezpečnosti",
+        "work.network.text": "Jednoduchá analýza hesla na overenie jeho bezpečnosti.",
+        "work.passw.title": "Jednoduchá Kontrola Hesiel",
+        "work.passw.text": "Skontrolujte silu svojho hesla priamo tu.",
+        "about.title": "F:\\O-mne",
+        "about.bg.title": "Moja História",
+        "about.bg.text":
+            "Špecialista na kybernetickú bezpečnosť so zameraním na ofenzívnu bezpečnosť, penetračné testovanie a návrh bezpečných systémov. Rád hľadám a opravujem bezpečnostné zraniteľnosti.",
+        "about.sec.title": "Bezpečnostné Zručnosti",
+        "about.sec.text":
+            "Penetračné Testovanie • Hodnotenie Zraniteľností • Sieťová Bezpečnosť • Kryptografia • Bezpečnostné Audity",
+        "about.tech.title": "Technické Zručnosti",
+        "about.tech.text": "Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
+        "contact.title": "Kontakt",
         "footer.copyright": "Ján Vojvoda. jvsec.dev",
-        "common.security":"Bezpečnosť",
-        "common.automation":"Automatizácia",
-        "common.networking":"Sieťovanie",
-        "modal.email":"Email",
-        "modal.github":"GitHub",
-        "modal.linkedin":"LinkedIn",
-        "modal.pgp":"PGP Kľúč",
-        "modal.email_text":"Ján@jvsec.dev",
-        "modal.github_text":"github.com/janvojvoda",
-        "modal.linkedin_text":"linkedin.com/in/janvojvoda",
-        "modal.pgp_text":"-----BEGIN PGP PUBLIC KEY BLOCK-----\n[Your PGP Key]\n-----END PGP PUBLIC KEY BLOCK-----"
+        "common.security": "Bezpečnosť",
+        "common.automation": "Automatizácia",
+        "common.networking": "Networking",
+        "modal.email": "Email",
+        "modal.github": "GitHub",
+        "modal.linkedin": "LinkedIn",
+        "modal.pgp": "PGP Kľúč",
+        "modal.email_text": "jan@jvsec.dev",
+        "modal.github_text": "https://github.com/janvsec",
+        "modal.linkedin_text": "linkedin.com/in/janvojvoda",
+        "modal.pgp_text":
+            "\n-----BEGIN PGP PUBLIC KEY BLOCK-----\nComment: User ID:\tJanVojvoda <mailjanvojvoda@gmail.com>\nComment: Valid from:\t18/11/2025 15:58\nComment: Valid until:\t18/11/2028 12:00\nComment: Type:\t255-bit EdDSA (secret key available)\nComment: Usage:\tSigning, Encryption, Certifying User IDs\nComment: Fingerprint:\t97CB37F5F4DE6B3A143DD0EB51C2A65FE8A71D94\nmDMEaRyJkhYJKwYBBAHaRw8BAQdAFrtxCoMM4U9WosN12tEafVG0yI1M7cNAwG4D\nknC0R1e0JUphblZvanZvZGEgPG1haWxqYW52b2p2b2RhQGdtYWlsLmNvbT6ImQQT\nFgoAQRYhBJfLN/X03ms6FD3Q61HCpl/opx2UBQJpHImSAhsDBQkFpLQeBQsJCAcC\nAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEFHCpl/opx2U6cYA/2vzomSYvRcumwe2\nwINuBHdHzIA+kgdKcrj+DPXVERuMAP0VJOLSVnOe9/osgHrOKCFL9x+gTtQRGKu3\nV108JzNmArg4BGkciZISCisGAQQBl1UBBQEBB0DNZIM+JvmquVYUJIA71E8L8gnj\n1RTrGG8nenNlJHnqVgMBCAeIfgQYFgoAJhYhBJfLN/X03ms6FD3Q61HCpl/opx2U\nBQJpHImSAhsMBQkFpLQeAAoJEFHCpl/opx2UEw0BAONykJrOI3IItcwE/Jf95xi2\nHOo4xKZdRmurmJKfoarCAP9PXL+ffq/ifAfU+DwKdAXvtYPqzDDn1h6d5ZaribBR\nCQ==\n=pkd8\n-----END PGP PUBLIC KEY BLOCK-----",
+        "passw.modal.title": "Skontrolujte Heslo",
+        "passw.input.placeholder": "Zadajte heslo",
+        "passw.strength.weak": "Slabé",
+        "passw.strength.medium": "Stredné",
+        "passw.strength.strong": "Silné",
+        "passw.req.length": "8+ znakov",
+        "passw.req.uppercase": "Veľké písmeno [A, B, C, ...]",
+        "passw.req.lowercase": "Malé písmeno [a, b, c, ...]",
+        "passw.req.number": "Číslo [0, 1, 2, ...]",
+        "passw.req.symbol": "Symbol [!, @, #, ...]",
+        "passw.generate": "Vygenerovať silné heslo",
     },
     en: {
         "nav.name": "Ján Vojvoda",
         "nav.domain": "C:\\Website\\jvsec.dev\\",
-        "nav.projects":"Projects",
-        "nav.about":"About Me",
-        "nav.contact":"Contact",
+        "nav.projects": "Projects",
+        "nav.about": "About Me",
+        "nav.contact": "Contact",
         "hero.name": "Ján Vojvoda",
         "hero.image": "[Profile Photo]",
-        "hero.subtitle":"D:\\Cybersecurity_Enthusiast\\",
-        "hero.text":"I focus on securing digital systems and creating robust security solutions. My work includes penetration testing, vulnerability assessment, and security architecture.",
-        "hero.contact":"Contact Me",
-        "hero.projects":"View Projects",
-        "work.title":"Security Projects",
-        "work.pentest.title":"Penetration Framework",
-        "work.pentest.text":"A custom framework for automated security testing and vulnerability scanning.",
-        "work.auth.title":"Secure Authentication System",
-        "work.auth.text":"A platform featuring multi-factor authentication, advanced security features, and monitoring.",
-        "work.network.title":"Network Security Monitor",
-        "work.network.text":"Real-time network traffic analysis and an intrusion detection system.",
-        "about.title":"About Me",
-        "about.bg.title":"My Background",
-        "about.bg.text":"A cybersecurity specialist focused on offensive security, penetration testing, and secure system design. I enjoy discovering and fixing security vulnerabilities.",
-        "about.sec.title":"Security Skills",
-        "about.sec.text":"Penetration Testing • Vulnerability Assessment • Network Security • Cryptography • Security Audits",
-        "about.tech.title":"Technical Skills",
-        "about.tech.text":"Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
-        "contact.title":"Contact",
+        "hero.subtitle": "D:\\Cybersecurity_Enthusiast\\",
+        "hero.text":
+            "I focus on securing digital systems and creating robust security solutions. My work includes penetration testing, vulnerability assessment, and security architecture.",
+        "hero.contact": "Contact Me",
+        "hero.projects": "View Projects",
+        "work.title": "Security Projects",
+        "work.pentest.title": "Penetration Framework",
+        "work.pentest.text": "A custom framework for automated security testing and vulnerability scanning.",
+        "work.auth.title": "Secure Authentication System",
+        "work.auth.text":
+            "A platform featuring multi-factor authentication, advanced security features, and monitoring.",
+        "work.network.title": "Network Security Monitor",
+        "work.network.text": "A simple password analysis to check its security",
+        "work.passw.title": "Simple Password Checker",
+        "about.title": "About Me",
+        "about.bg.title": "My Background",
+        "about.bg.text":
+            "A cybersecurity specialist focused on offensive security, penetration testing, and secure system design. I enjoy discovering and fixing security vulnerabilities.",
+        "about.sec.title": "Security Skills",
+        "about.sec.text":
+            "Penetration Testing • Vulnerability Assessment • Network Security • Cryptography • Security Audits",
+        "about.tech.title": "Technical Skills",
+        "about.tech.text": "Python, JavaScript, Go, Bash, Docker, AWS, Linux, PostgreSQL, React, Node.js",
+        "contact.title": "Contact",
         "footer.copyright": "Ján Vojvoda. jvsec.dev",
-        "common.security":"Security",
-        "common.automation":"Automation",
-        "common.networking":"Networking",
-        "modal.email":"Email",
-        "modal.github":"GitHub",
-        "modal.linkedin":"LinkedIn",
-        "modal.pgp":"PGP Key",
-        "modal.email_text":"Ján@jvsec.dev",
-        "modal.github_text":"github.com/janvojvoda",
-        "modal.linkedin_text":"linkedin.com/in/janvojvoda",
-        "modal.pgp_text":"-----BEGIN PGP PUBLIC KEY BLOCK-----\n[Your PGP Key]\n-----END PGP PUBLIC KEY BLOCK-----"
-    }
+        "common.security": "Security",
+        "common.automation": "Automation",
+        "common.networking": "Networking",
+        "modal.email": "Email",
+        "modal.github": "GitHub",
+        "modal.linkedin": "LinkedIn",
+        "modal.pgp": "PGP Key",
+        "modal.email_text": "jan@jvsec.dev",
+        "modal.github_text": "https://github.com/janvsec",
+        "modal.linkedin_text": "linkedin.com/in/janvojvoda",
+        "modal.pgp_text": "\n-----BEGIN PGP PUBLIC KEY BLOCK-----\nComment: User ID:\tJanVojvoda <mailjanvojvoda@gmail.com>\nComment: Valid from:\t18/11/2025 15:58\nComment: Valid until:\t18/11/2028 12:00\nComment: Type:\t255-bit EdDSA (secret key available)\nComment: Usage:\tSigning, Encryption, Certifying User IDs\nComment: Fingerprint:\t97CB37F5F4DE6B3A143DD0EB51C2A65FE8A71D94\nmDMEaRyJkhYJKwYBBAHaRw8BAQdAFrtxCoMM4U9WosN12tEafVG0yI1M7cNAwG4D\nknC0R1e0JUphblZvanZvZGEgPG1haWxqYW52b2p2b2RhQGdtYWlsLmNvbT6ImQQT\nFgoAQRYhBJfLN/X03ms6FD3Q61HCpl/opx2UBQJpHImSAhsDBQkFpLQeBQsJCAcC\nAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEFHCpl/opx2U6cYA/2vzomSYvRcumwe2\nwINuBHdHzIA+kgdKcrj+DPXVERuMAP0VJOLSVnOe9/osgHrOKCFL9x+gTtQRGKu3\nV108JzNmArg4BGkciZISCisGAQQBl1UBBQEBB0DNZIM+JvmquVYUJIA71E8L8gnj\n1RTrGG8nenNlJHnqVgMBCAeIfgQYFgoAJhYhBJfLN/X03ms6FD3Q61HCpl/opx2U\nBQJpHImSAhsMBQkFpLQeAAoJEFHCpl/opx2UEw0BAONykJrOI3IItcwE/Jf95xi2\nHOo4xKZdRmurmJKfoarCAP9PXL+ffq/ifAfU+DwKdAXvtYPqzDDn1h6d5ZaribBR\nCQ==\n=pkd8\n-----END PGP PUBLIC KEY BLOCK-----",
+        "work.passw.text": "Check your password strength right here.",
+        "passw.modal.title": "Check Your Password",
+        "passw.input.placeholder": "Enter password",
+        "passw.strength.weak": "Weak",
+        "passw.strength.medium": "Medium",
+        "passw.strength.strong": "Strong",
+        "passw.req.length": "8+ characters",
+        "passw.req.uppercase": "Uppercase letter [A, B, C, ...]",
+        "passw.req.lowercase": "Lowercase letter [a, b, c, ...]",
+        "passw.req.number": "Number [0, 1, 2, ...]",
+        "passw.req.symbol": "Symbol [!, @, #, ...]",
+        "passw.generate": "Generate strong password",
+    },
 };
-
-let currentLang = "sk";
-
-function applyTranslations(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if(translations[lang][key]) el.textContent = translations[lang][key];
-    });
-}
-
-function switchLanguage(lang) {
-    if(currentLang===lang) return;
-    const elements = document.querySelectorAll("[data-i18n]");
-    elements.forEach(el=>{
-        el.style.opacity=0; 
-        el.style.transform="translateY(10px)"; 
-        el.style.transition="opacity 0.3s, transform 0.3s";
-    });
-    setTimeout(()=>{
-        applyTranslations(lang);
-        elements.forEach(el=>{
-            el.style.opacity=1; 
-            el.style.transform="translateY(0)";
-        });
-    },300);
-    document.querySelectorAll(".lang-btn").forEach(btn=>btn.classList.toggle("active", btn.getAttribute("data-lang")===lang));
-    currentLang=lang;
-}
-
-document.querySelectorAll(".lang-btn").forEach(btn=>{
-    btn.addEventListener("click",()=>switchLanguage(btn.getAttribute("data-lang")));
-});
-
-// Modal
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalText = document.getElementById("modal-text");
-document.querySelectorAll(".contact-btn").forEach(btn=>{
-    btn.addEventListener("click", e=>{
-        e.preventDefault();
-        const key = btn.getAttribute("data-modal");
-        modalTitle.textContent = translations[currentLang]["modal."+key];
-        modalText.textContent = translations[currentLang]["modal."+key+"_text"];
-        modal.style.display="flex";
-    });
-});
-document.getElementById("close-btn").addEventListener("click",()=>modal.style.display="none");
-window.addEventListener("click",e=>{if(e.target===modal) modal.style.display="none";});
-
-// Improved animation on scroll
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        }
-    });
-},{threshold:0.1});
-document.querySelectorAll("header, .hero, .section").forEach(el=>observer.observe(el));
-
-applyTranslations(currentLang);
+let currentLang="sk";function applyTranslations(a){document.querySelectorAll("[data-i18n]").forEach(t=>{var e=t.getAttribute("data-i18n");translations[a][e]&&(t.textContent=translations[a][e])}),document.querySelectorAll("[data-i18n-placeholder]").forEach(t=>{var e=t.getAttribute("data-i18n-placeholder");translations[a][e]&&(t.placeholder=translations[a][e])})}function switchLanguage(e){if(currentLang!==e){const t=document.querySelectorAll("[data-i18n]");t.forEach(t=>{t.style.opacity=0,t.style.transform="translateY(10px)",t.style.transition="opacity 0.3s, transform 0.3s"}),setTimeout(()=>{applyTranslations(e),t.forEach(t=>{t.style.opacity=1,t.style.transform="translateY(0)"}),aktualizujSiluHesla(passwordInput.value)},300),document.querySelectorAll(".lang-btn").forEach(t=>{t.classList.toggle("active",t.getAttribute("data-lang")===e)}),currentLang=e}}document.querySelectorAll(".lang-btn").forEach(t=>{t.addEventListener("click",()=>switchLanguage(t.getAttribute("data-lang")))});const modal=document.getElementById("modal"),modalTitle=document.getElementById("modal-title"),modalText=document.getElementById("modal-text");document.querySelectorAll(".contact-btn").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();t=e.getAttribute("data-modal");modalTitle.textContent=translations[currentLang]["modal."+t],modalText.textContent=translations[currentLang]["modal."+t+"_text"],modal.style.display="flex"})}),document.getElementById("close-btn").addEventListener("click",()=>modal.style.display="none"),window.addEventListener("click",t=>{t.target===modal&&(modal.style.display="none")});const observer=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&t.target.classList.add("visible")})},{threshold:.1});document.querySelectorAll("header, .hero, .section").forEach(t=>observer.observe(t)),applyTranslations(currentLang);
 </script>
+
+
 
 </body>
 </html>
