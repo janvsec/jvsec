@@ -197,6 +197,41 @@ const passwordModal=document.getElementById("password-modal"),passwordCloseBtn=d
         </div>
     </section>
 
+<section class="section" id="certifications">
+    <h2 class="section-title" data-i18n="cert.title">D:\Certifikáty_</h2>
+    <div class="grid">
+        <div class="card">
+            <h3 data-i18n="cert.pen.title">Základy Kybernetickej Bezpečnosti</h3>
+            <p>
+                <span data-i18n="cert.pen.text">Osvedčenie o účasti na kurze Kurz Základy Kybernetickej Bezpečnosti.</span>
+                <a href="https://cybercompetence.sk/" style="color: #ffeeee; text-decoration: none;">cybercompetence.sk</a>
+            </p>
+            <div class="skill-tags">
+                <span class="skill-tag">7h</span>
+                <span class="skill-tag">11.11 2024</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 data-i18n="cert.cloud.title">Riadenie Kybernetických Bezpečnostných Incidentov</h3>
+            <p>
+                <span data-i18n="cert.cloud.text">Osvedčenie o absolvovaní kurzu Riadenie Kybernetických Bezpečnostných Incidentov</span>
+                <a href="https://cybercompetence/" style="color: #ffeeee; text-decoration: none;">cybercompetence.sk</a>
+            </p>
+            <div class="skill-tags">
+                <span class="skill-tag">14h</span>
+                <span class="skill-tag">[12-13].08 2025</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    
     <section class="section" id="contact">
         <h2 class="section-title" data-i18n="contact.title">Kontakt</h2>
         <div class="contact-buttons">
@@ -207,6 +242,10 @@ const passwordModal=document.getElementById("password-modal"),passwordCloseBtn=d
         </div>
     </section>
 </div>
+
+
+
+
 
 <footer>
     <p>© <script>document.write(new Date().getFullYear())</script> <span data-i18n="footer.copyright">Ján Vojvoda. jvsec.dev</span></p>
@@ -279,6 +318,12 @@ const translations = {
         "passw.req.number": "Číslo [0, 1, 2, ...]",
         "passw.req.symbol": "Symbol [!, @, #, ...]",
         "passw.generate": "Vygenerovať silné heslo",
+ "cert.title": "D:\\Certifikáty_",
+    "cert.pen.title": "Základy Kybernetickej Bezpečnosti",
+    "cert.pen.text": "Osvedčenie o účasti na kurze Kurz Základy Kybernetickej Bezpečnosti.",
+    "cert.cloud.title": "Riadenie Kybernetických Bezpečnostných Incidentov",
+    "cert.cloud.text": "Osvedčenie o absolvovaní kurzu Riadenie Kybernetických Bezpečnostných Incidentov."
+
     },
     en: {
         "nav.name": "Ján Vojvoda",
@@ -336,6 +381,13 @@ const translations = {
         "passw.req.number": "Number [0, 1, 2, ...]",
         "passw.req.symbol": "Symbol [!, @, #, ...]",
         "passw.generate": "Generate strong password",
+  "cert.title": "D:\\Certificates_",
+    "cert.pen.title": "Cybersecurity Basics",
+    "cert.pen.text": "Certificate of participation in the Cybersecurity Basics course.",
+    "cert.cloud.title": "Cyber ​​Security Incident Management",
+    "cert.cloud.text": "Certificate of completion of the Cybersecurity Incident Management course."
+
+   
     },
 };
 let currentLang="sk";function applyTranslations(a){document.querySelectorAll("[data-i18n]").forEach(t=>{var e=t.getAttribute("data-i18n");translations[a][e]&&(t.textContent=translations[a][e])}),document.querySelectorAll("[data-i18n-placeholder]").forEach(t=>{var e=t.getAttribute("data-i18n-placeholder");translations[a][e]&&(t.placeholder=translations[a][e])})}function switchLanguage(e){if(currentLang!==e){const t=document.querySelectorAll("[data-i18n]");t.forEach(t=>{t.style.opacity=0,t.style.transform="translateY(10px)",t.style.transition="opacity 0.3s, transform 0.3s"}),setTimeout(()=>{applyTranslations(e),t.forEach(t=>{t.style.opacity=1,t.style.transform="translateY(0)"}),aktualizujSiluHesla(passwordInput.value)},300),document.querySelectorAll(".lang-btn").forEach(t=>{t.classList.toggle("active",t.getAttribute("data-lang")===e)}),currentLang=e}}document.querySelectorAll(".lang-btn").forEach(t=>{t.addEventListener("click",()=>switchLanguage(t.getAttribute("data-lang")))});const modal=document.getElementById("modal"),modalTitle=document.getElementById("modal-title"),modalText=document.getElementById("modal-text");document.querySelectorAll(".contact-btn").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();t=e.getAttribute("data-modal");modalTitle.textContent=translations[currentLang]["modal."+t],modalText.textContent=translations[currentLang]["modal."+t+"_text"],modal.style.display="flex"})}),document.getElementById("close-btn").addEventListener("click",()=>modal.style.display="none"),window.addEventListener("click",t=>{t.target===modal&&(modal.style.display="none")});const observer=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&t.target.classList.add("visible")})},{threshold:.1});document.querySelectorAll("header, .hero, .section").forEach(t=>observer.observe(t)),applyTranslations(currentLang);
@@ -343,6 +395,6 @@ let currentLang="sk";function applyTranslations(a){document.querySelectorAll("[d
 
 
 
+
 </body>
 </html>
-
