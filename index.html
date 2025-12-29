@@ -387,9 +387,7 @@ const translations = {
 };
 let currentLang="sk";function applyTranslations(a){document.querySelectorAll("[data-i18n]").forEach(t=>{var e=t.getAttribute("data-i18n");translations[a][e]&&(t.textContent=translations[a][e])}),document.querySelectorAll("[data-i18n-placeholder]").forEach(t=>{var e=t.getAttribute("data-i18n-placeholder");translations[a][e]&&(t.placeholder=translations[a][e])})}function switchLanguage(e){if(currentLang!==e){const t=document.querySelectorAll("[data-i18n]");t.forEach(t=>{t.style.opacity=0,t.style.transform="translateY(10px)",t.style.transition="opacity 0.3s, transform 0.3s"}),setTimeout(()=>{applyTranslations(e),t.forEach(t=>{t.style.opacity=1,t.style.transform="translateY(0)"}),aktualizujSiluHesla(passwordInput.value)},300),document.querySelectorAll(".lang-btn").forEach(t=>{t.classList.toggle("active",t.getAttribute("data-lang")===e)}),currentLang=e}}document.querySelectorAll(".lang-btn").forEach(t=>{t.addEventListener("click",()=>switchLanguage(t.getAttribute("data-lang")))});const modal=document.getElementById("modal"),modalTitle=document.getElementById("modal-title"),modalText=document.getElementById("modal-text");document.querySelectorAll(".contact-btn").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();t=e.getAttribute("data-modal");modalTitle.textContent=translations[currentLang]["modal."+t],modalText.textContent=translations[currentLang]["modal."+t+"_text"],modal.style.display="flex"})}),document.getElementById("close-btn").addEventListener("click",()=>modal.style.display="none"),window.addEventListener("click",t=>{t.target===modal&&(modal.style.display="none")});const observer=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&t.target.classList.add("visible")})},{threshold:.1});document.querySelectorAll("header, .hero, .section").forEach(t=>observer.observe(t)),applyTranslations(currentLang);
 </script>
-
-
-
+
 
 </body>
 </html>
